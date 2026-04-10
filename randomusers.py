@@ -11,7 +11,12 @@ def get_full_names(data: dict) -> list[str]:
     Returns:
         list[str]: List of full names.
     """
-    pass
+    result = []
+    for user in data["results"]:
+        full_name = user["name"]["first"] + " " + user["name"]["last"]
+        result.append(full_name)
+
+    return result
 
 
 def get_users_by_country(data: dict, country: str) -> list[dict]:
@@ -163,4 +168,5 @@ def get_registered_before_year(data: dict, year: int) -> list[dict]:
     pass
 
 
-get_full_names(randomuser_data)
+result = get_full_names(randomuser_data)
+print(result)
