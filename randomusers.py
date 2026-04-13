@@ -1,4 +1,5 @@
 from dataset import randomuser_data
+from pprint import pprint
 
 
 def get_full_names(data: dict) -> list[str]:
@@ -30,7 +31,22 @@ def get_users_by_country(data: dict, country: str) -> list[dict]:
     Returns:
         list[dict]: List of dictionaries containing full name and email of matching users.
     """
-    pass
+    users = [
+        {"name": "Suhasini Bhardwaj", "country": "India", "email": "suhasini.bhardwaj@example.com"},
+        {"name": "John Doe", "country": "USA", "email": "john.doe@example.com"},
+        {"name": "Ali Valiyev", "country": "India", "email": "ali.v@example.com"}
+    ]
+
+    def filter_users_by_country(data, country_name):
+        return [
+            {"name": user["name"], "email": user["email"]}
+            for user in data
+            if user["country"] == country_name
+        ]
+    
+    
+
+    
 
 
 def count_users_by_gender(data: dict) -> dict:
@@ -168,5 +184,7 @@ def get_registered_before_year(data: dict, year: int) -> list[dict]:
     pass
 
 
-result = get_full_names(randomuser_data)
+result1 = get_full_names(randomuser_data)
+print(result1)
+result = get_users_by_country(users, "India")
 print(result)
