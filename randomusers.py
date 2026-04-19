@@ -143,7 +143,7 @@ def get_all_coordinates(data: dict) -> list[tuple[str, str]]:
     pass
 
 
-def get_oldest_user(data: dict) -> dict:
+def get_oldest_user(data: dict) -> dict:  #10
     """
     Finds and returns the oldest user's name, age, and email.
 
